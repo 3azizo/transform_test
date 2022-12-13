@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-color: #4e65ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contant {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  gap: 10px;
+  background-color: #eee;
+  width: 470px;
+  height: 470px;
+}
+.contant .box {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: #dbdbdb59;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+}
+.nest {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  background-color: #7cc0fc;
+  transition: transform 5s;
+  z-index: 2;
+}
+.nest::after {
+  position: absolute;
+  content: "";
+  background-color: black;
+  width: 5px;
+  height: 5px;
+}
+.tl {
+  transform-origin: top left;
+}
+.tc::after {
+  left: 50%;
+}
+.tc {
+  transform-origin: top center;
+}
+.tr::after {
+  right: 0;
+}
+.tr {
+  transform-origin: top right;
+}
+.cl::after {
+  top: 50%;
+}
+.cl {
+  transform-origin: center left;
+}
+.cc::after {
+  display: none;
+}
+.cr::after {
+  right: 0;
+  top: 50%;
+}
+.cr {
+  transform-origin: center right;
+}
+.bl::after {
+  bottom: 0;
+}
+.bl {
+  transform-origin: bottom left;
+}
+.bc::after {
+  bottom: 0;
+  left: 50%;
+}
+.bc {
+  transform-origin: bottom center;
+}
+.br::after {
+  bottom: 0;
+  right: 0;
+}
+.br {
+  transform-origin: bottom right;
+}
+
+.transform_btn {
+  top: 50px;
+  align-self: flex-start;
+  position: absolute;
+  padding: 10px;
+  background-color: #17b9ff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  transition: transform 1s;
+}
+.transform_btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.trans {
+  transform: rotate(1turn);
+}
+@media (max-width: 768px) {
+  .contant {
+    grid-template-columns: repeat(3, 80px);
+    gap: 5px;
+    width: 250px;
+    height: 250px;
+  }
+  .contant .box {
+    width: 80px;
+    height: 80px;
+  }
+
+  .nest {
+    width: 70px;
+    height: 70px;
+  }
+  .nest::after {
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 2px;
+  }
+}
